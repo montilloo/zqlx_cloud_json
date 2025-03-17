@@ -1,0 +1,5350 @@
+{
+	"info": {
+		"title": "欧佛洛绪涅的项目",
+		"description": "",
+		"version": "1.0.0"
+	},
+	"swagger": "2.0",
+	"definitions": {
+		"ZqlxLocalServiceFactoryRentalVo": {
+			"type": "object",
+			"required": [],
+			"properties": {
+				"contactPerson": {
+					"type": "string",
+					"description": "联系人"
+				},
+				"contactPersonPhone": {
+					"type": "string",
+					"description": "联系方式"
+				},
+				"factoryAddress": {
+					"type": "string",
+					"description": "厂房地址"
+				},
+				"factoryAmount": {
+					"type": "integer",
+					"description": "厂房金额"
+				},
+				"factoryArea": {
+					"type": "integer",
+					"description": "厂房面积"
+				},
+				"factoryDesc": {
+					"type": "string",
+					"description": "厂房描述"
+				},
+				"factoryImages": {
+					"type": "string",
+					"description": "厂房照片"
+				},
+				"factoryOverview": {
+					"type": "string",
+					"description": "厂房概述"
+				},
+				"factoryRegion": {
+					"type": "string",
+					"description": "厂房区域"
+				},
+				"factoryTypeId": {
+					"type": "integer",
+					"description": "厂房出租类型id"
+				},
+				"id": {
+					"type": "integer"
+				},
+				"userId": {
+					"type": "integer",
+					"description": "用户ID"
+				}
+			}
+		},
+		"SearchFavoriteVo": {
+			"required": [
+				"resourceType"
+			],
+			"type": "object",
+			"properties": {
+				"resourceType": {
+					"maxItems": 2,
+					"description": "收藏类型,PRODUCT|COMPANY",
+					"oneOf": [
+						{
+							"description": "PRODUCT",
+							"type": "string"
+						},
+						{
+							"description": "COMPANY",
+							"type": "string"
+						}
+					],
+					"type": "oneOf",
+					"apipiost_allow_null": false,
+					"items": {
+						"description": "PRODUCT",
+						"type": "string",
+						"title": "Items"
+					}
+				},
+				"userId": {
+					"description": "用户ID",
+					"type": "integer"
+				}
+			}
+		},
+		"AppUserLoginVo": {
+			"type": "object",
+			"required": [],
+			"properties": {
+				"code": {
+					"type": "string",
+					"description": "短信验证码"
+				},
+				"password": {
+					"type": "string",
+					"description": "用户密码"
+				},
+				"phone": {
+					"type": "string",
+					"description": "用户手机号"
+				}
+			}
+		},
+		"ZqlxFeedBackVo": {
+			"type": "object",
+			"required": [],
+			"properties": {
+				"contactInformation": {
+					"type": "string",
+					"description": "联系方式"
+				},
+				"createTime": {
+					"type": "string"
+				},
+				"deleted": {
+					"type": "string",
+					"description": "删除标识 0 未删除 1 已删除"
+				},
+				"describe": {
+					"type": "string",
+					"description": "问题描述"
+				},
+				"id": {
+					"type": "string",
+					"description": "主键id"
+				},
+				"images": {
+					"type": "array",
+					"description": "图片"
+				},
+				"type": {
+					"type": "string",
+					"description": "问题类型 1-功能异常 2-产品改进"
+				},
+				"updateTime": {
+					"type": "string"
+				},
+				"version": {
+					"type": "integer"
+				}
+			}
+		},
+		"SendCodeVo": {
+			"type": "object",
+			"required": [],
+			"properties": {
+				"phone": {
+					"type": "string",
+					"description": "用户手机号"
+				},
+				"type": {
+					"type": "integer",
+					"description": "类型 1：登录(app) 2:重置手机号"
+				}
+			}
+		},
+		"ZqlxLocalServiceUniversalHelpVo": {
+			"type": "object",
+			"required": [],
+			"properties": {
+				"contactPerson": {
+					"type": "string",
+					"description": "联系人"
+				},
+				"contactPersonPhone": {
+					"type": "string",
+					"description": "联系方式"
+				},
+				"createTime": {
+					"type": "string"
+				},
+				"deleted": {
+					"type": "string",
+					"description": "删除标识 0 未删除 1 已删除"
+				},
+				"helpContent": {
+					"type": "string",
+					"description": "求助内容"
+				},
+				"helpImages": {
+					"type": "array",
+					"description": "求助图片描述"
+				},
+				"helpTags": {
+					"type": "string",
+					"description": "求助标签"
+				},
+				"id": {
+					"type": "integer",
+					"description": "主键id"
+				},
+				"updateTime": {
+					"type": "string"
+				},
+				"userId": {
+					"type": "integer",
+					"description": "用户id"
+				},
+				"version": {
+					"type": "integer"
+				}
+			}
+		},
+		"ZqlxSearchHistoryVo": {
+			"type": "object",
+			"required": [],
+			"properties": {
+				"createTime": {
+					"type": "string"
+				},
+				"deleted": {
+					"type": "string"
+				},
+				"id": {
+					"type": "string"
+				},
+				"searchContent": {
+					"type": "string"
+				},
+				"searchType": {
+					"type": "integer"
+				},
+				"updateTime": {
+					"type": "string"
+				},
+				"userId": {
+					"type": "integer",
+					"description": "用户ID"
+				},
+				"version": {
+					"type": "integer"
+				}
+			}
+		},
+		"ZqlxLocalServiceManpowerTransferVo": {
+			"type": "object",
+			"required": [],
+			"properties": {
+				"contactPerson": {
+					"type": "string",
+					"description": "联系人"
+				},
+				"contactPersonPhone": {
+					"type": "string",
+					"description": "联系方式"
+				},
+				"createTime": {
+					"type": "string"
+				},
+				"deleted": {
+					"type": "string",
+					"description": "删除标识 0 未删除 1 已删除"
+				},
+				"id": {
+					"type": "string",
+					"description": "主键id"
+				},
+				"updateTime": {
+					"type": "string"
+				},
+				"userId": {
+					"type": "integer",
+					"description": "用户id"
+				},
+				"version": {
+					"type": "integer"
+				},
+				"workAddress": {
+					"type": "string",
+					"description": "工作地址"
+				},
+				"workCompanyName": {
+					"type": "string",
+					"description": "提供公司名称"
+				},
+				"workContent": {
+					"type": "string",
+					"description": "工作内容"
+				},
+				"workName": {
+					"type": "string",
+					"description": "工作名称"
+				}
+			}
+		},
+		"ZqlxLocalServiceOemVo": {
+			"type": "object",
+			"required": [],
+			"properties": {
+				"contactPerson": {
+					"type": "string",
+					"description": "联系人"
+				},
+				"contactPersonPhone": {
+					"type": "string",
+					"description": "联系方式"
+				},
+				"createTime": {
+					"type": "string"
+				},
+				"deleted": {
+					"type": "string",
+					"description": "删除标识 0 未删除 1 已删除"
+				},
+				"id": {
+					"type": "integer",
+					"description": "主键id"
+				},
+				"oemOrderAddress": {
+					"type": "string",
+					"description": "订单地址"
+				},
+				"oemOrderEndTime": {
+					"type": "string",
+					"description": "订单截止时间"
+				},
+				"oemOrderImages": {
+					"type": "array",
+					"description": "订单照片"
+				},
+				"oemOrderName": {
+					"type": "string",
+					"description": "订单名称"
+				},
+				"oemOrderQuantity": {
+					"type": "integer",
+					"description": "订单数量"
+				},
+				"oemOrderRemark": {
+					"type": "string",
+					"description": "订单备注"
+				},
+				"updateTime": {
+					"type": "string"
+				},
+				"userId": {
+					"type": "integer",
+					"description": "用户id"
+				},
+				"version": {
+					"type": "integer"
+				}
+			}
+		},
+		"CompanyAuthenticationVo": {
+			"type": "object",
+			"required": [],
+			"properties": {
+				"companyAddress": {
+					"type": "string",
+					"description": "企业详细地址"
+				},
+				"companyBusinessLicenseUrl": {
+					"type": "string",
+					"description": "营业执照"
+				},
+				"companyCityId": {
+					"type": "string",
+					"description": "市id"
+				},
+				"companyContactIdCard": {
+					"type": "string",
+					"description": "联系人身份证号码"
+				},
+				"companyContactName": {
+					"type": "string",
+					"description": "联系人"
+				},
+				"companyContactPhone": {
+					"type": "string",
+					"description": "联系方式"
+				},
+				"companyName": {
+					"type": "string",
+					"description": "企业名称"
+				},
+				"companyProvinceId": {
+					"type": "string",
+					"description": "省id"
+				},
+				"companyRegionId": {
+					"type": "string",
+					"description": "区域id"
+				},
+				"companySocialCreditCode": {
+					"type": "string",
+					"description": "社会信用代码"
+				},
+				"userId": {
+					"type": "integer",
+					"description": "用户id"
+				}
+			}
+		},
+		"CompanyOpportunityVo": {
+			"type": "object",
+			"required": [
+				"purchaseCategoryId",
+				"userId"
+			],
+			"properties": {
+				"purchaseCategoryId": {
+					"type": "integer",
+					"description": "采购单类目id"
+				},
+				"purchaseDetails": {
+					"type": "string",
+					"description": "采购详情"
+				},
+				"purchaseEndTime": {
+					"type": "string",
+					"description": "采购结束时间"
+				},
+				"purchaseImages": {
+					"type": "string",
+					"description": "采购图片"
+				},
+				"purchasePerson": {
+					"type": "string",
+					"description": "采购人"
+				},
+				"purchasePersonPhone": {
+					"type": "string",
+					"description": "采购人联系方式"
+				},
+				"purchaseProductName": {
+					"type": "string",
+					"description": "采购单产品"
+				},
+				"purchaseQuantity": {
+					"type": "string",
+					"description": "采购数量"
+				},
+				"userId": {
+					"type": "integer",
+					"description": "用户id"
+				}
+			}
+		},
+		"ZqlxLocalServiceClearInventoryVo": {
+			"type": "object",
+			"required": [],
+			"properties": {
+				"contactPerson": {
+					"type": "string",
+					"description": "联系人"
+				},
+				"contactPersonPhone": {
+					"type": "string",
+					"description": "联系方式"
+				},
+				"createTime": {
+					"type": "string"
+				},
+				" deleted": {
+					"type": "string"
+				},
+				"id": {
+					"type": "string"
+				},
+				"inventoryAddress": {
+					"type": "string",
+					"description": "库存地址"
+				},
+				"inventoryDesc": {
+					"type": "string",
+					"description": "库存描述"
+				},
+				"inventoryImages": {
+					"type": "string",
+					"description": "照片"
+				},
+				"inventoryModel": {
+					"type": "string",
+					"description": "库存型号"
+				},
+				"inventoryName": {
+					"type": "string",
+					"description": "库存名称"
+				},
+				"inventoryQuantity": {
+					"type": "integer",
+					"description": "库存数量"
+				},
+				"updateTime": {
+					"type": "string"
+				},
+				"userId": {
+					"type": "string",
+					"description": "用户ID"
+				},
+				"version": {
+					"type": "string"
+				}
+			}
+		},
+		"SearchClueVo": {
+			"type": "object",
+			"required": [
+				"uerId"
+			],
+			"properties": {
+				"uerId": {
+					"type": "integer",
+					"description": "当前登录人id"
+				},
+				"clueStatus": {
+					"type": "string",
+					"description": "0 询价中 1 已回应"
+				}
+			}
+		},
+		"SearchCompanyOpportunityVo": {
+			"type": "object",
+			"required": [],
+			"properties": {
+				"excludeOpportunityId": {
+					"type": "integer"
+				},
+				"purchaseCategoryIds": {
+					"type": "array"
+				},
+				"purchasePerson": {
+					"type": "string",
+					"description": "采购人"
+				},
+				"purchaseProductName": {
+					"type": "string",
+					"description": "采购单产品"
+				},
+				"userId": {
+					"type": "integer",
+					"description": "用户id"
+				}
+			}
+		},
+		"CompanyClueVo": {
+			"type": "object",
+			"required": [],
+			"properties": {
+				"replayContent": {
+					"type": "string",
+					"description": "回复内容"
+				},
+				"replyUserId": {
+					"type": "integer",
+					"description": "回复人"
+				}
+			}
+		}
+	},
+	"paths": {
+		"{{host}}/zqlx/app/banner/list": {
+			"post": {
+				"summary": "列表",
+				"description": "",
+				"tags": [
+					"政企连心/APP-Banner管理"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object"
+						},
+						"type": "string",
+						"example": "{}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"msg": {
+											"type": "string"
+										},
+										"code": {
+											"type": "integer"
+										},
+										"data": {
+											"type": "array",
+											"items": {
+												"type": "object",
+												"properties": {
+													"deleted": {
+														"type": "boolean"
+													},
+													"createTime": {
+														"type": "string"
+													},
+													"updateTime": {
+														"type": "string"
+													},
+													"version": {
+														"type": "integer"
+													},
+													"id": {
+														"type": "integer"
+													},
+													"bannerTitle": {
+														"type": "string"
+													},
+													"bannerImage": {
+														"type": "string"
+													},
+													"bannerIsJump": {
+														"type": "boolean"
+													},
+													"bannerJumpType": {
+														"type": "string"
+													},
+													"bannerJumpContent": {
+														"type": "string"
+													},
+													"bannerJumpContentUrl": {
+														"type": "string"
+													},
+													"jumpResourceId": {
+														"type": "integer"
+													},
+													"bannerPriority": {
+														"type": "integer"
+													},
+													"bannerIsEffective": {
+														"type": "boolean"
+													}
+												},
+												"required": [
+													"deleted",
+													"createTime",
+													"updateTime",
+													"version",
+													"id",
+													"bannerTitle",
+													"bannerImage",
+													"bannerIsJump",
+													"bannerJumpType",
+													"bannerJumpContent",
+													"bannerJumpContentUrl",
+													"jumpResourceId",
+													"bannerPriority",
+													"bannerIsEffective"
+												]
+											}
+										}
+									},
+									"required": [
+										"msg",
+										"code",
+										"data"
+									]
+								},
+								"example": "{\n\t\"msg\": \"操作成功\",\n\t\"code\": 200,\n\t\"data\": [\n\t\t{\n\t\t\t\"deleted\": false,\n\t\t\t\"createTime\": \"2025-03-10 18:09:26\",\n\t\t\t\"updateTime\": \"2025-03-10 18:14:00\",\n\t\t\t\"version\": 0,\n\t\t\t\"id\": 11,\n\t\t\t\"bannerTitle\": \"DeepSeek火爆\",\n\t\t\t\"bannerImage\": \"https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2025%2F0109%2Fb0aa7f46j00sptbxn0023d200u000k0g00g200ap.jpg&thumbnail=660x2147483647&quality=80&type=jpg\",\n\t\t\t\"bannerIsJump\": true,\n\t\t\t\"bannerJumpType\": \"0\",\n\t\t\t\"bannerJumpContent\": \"DeepSeek火爆\",\n\t\t\t\"bannerJumpContentUrl\": \"\",\n\t\t\t\"jumpResourceId\": 123,\n\t\t\t\"bannerPriority\": 0,\n\t\t\t\"bannerIsEffective\": true\n\t\t},\n\t\t{\n\t\t\t\"deleted\": false,\n\t\t\t\"createTime\": \"2025-03-10 18:11:27\",\n\t\t\t\"updateTime\": \"2025-03-10 18:14:00\",\n\t\t\t\"version\": 0,\n\t\t\t\"id\": 12,\n\t\t\t\"bannerTitle\": \"通义千问内容很多\",\n\t\t\t\"bannerImage\": \"https://pic.rmb.bdstatic.com/bjh/events/8f986035f535a28ece95380f45f94c291990.jpeg@h_1280\",\n\t\t\t\"bannerIsJump\": true,\n\t\t\t\"bannerJumpType\": \"0\",\n\t\t\t\"bannerJumpContent\": \"阿里巴巴\",\n\t\t\t\"bannerJumpContentUrl\": \"\",\n\t\t\t\"jumpResourceId\": 123,\n\t\t\t\"bannerPriority\": 0,\n\t\t\t\"bannerIsEffective\": true\n\t\t}\n\t]\n}"
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/dictionary/getListByKey/{dictKey}": {
+			"get": {
+				"summary": "根据产业链id获取上中下游数据列表",
+				"description": "",
+				"tags": [
+					"政企连心/App-字典"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/feedback/add": {
+			"post": {
+				"summary": "新增",
+				"description": "",
+				"tags": [
+					"政企连心/App-意见反馈"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"description": "主键id"
+								},
+								"type": {
+									"type": "string",
+									"description": "问题类型 1-功能异常 2-产品改进"
+								},
+								"images": {
+									"type": "array",
+									"description": "图片"
+								},
+								"deleted": {
+									"type": "string",
+									"description": "删除标识 0 未删除 1 已删除"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"describe": {
+									"type": "string",
+									"description": "问题描述"
+								},
+								"createTime": {
+									"type": "string"
+								},
+								"updateTime": {
+									"type": "string"
+								},
+								"contactInformation": {
+									"type": "string",
+									"description": "联系方式"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"contactInformation\": \"cleverly uh-huh foolishly vanadyl grok suspiciously innocent optimistically responsibility restfully psst agreeable how inveigle darling towards lest\",\n\t\"createTime\": \"1996-10-21 20:37:10\",\n\t\"deleted\": \"innocently once postbox against boohoo weakly weary thin inborn juvenile knowledgeably concrete ouch consequently however blossom splurge close soft until towards above midst scent developing\",\n\t\"describe\": \"without plus arid negligible in\",\n\t\"id\": 94,\n\t\"images\": [],\n\t\"type\": \"strict galvanize punctually hydrocarbon forager release kindly metabolite hmph modulo forecast submitter male\",\n\t\"updateTime\": \"1993-12-08 01:27:51\",\n\t\"version\": 76\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/universal/help/add": {
+			"post": {
+				"summary": "新增万能求助信息",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-万能求助"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer",
+									"description": "主键id"
+								},
+								"userId": {
+									"type": "integer",
+									"description": "用户id"
+								},
+								"deleted": {
+									"type": "string",
+									"description": "删除标识 0 未删除 1 已删除"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"helpTags": {
+									"type": "string",
+									"description": "求助标签"
+								},
+								"createTime": {
+									"type": "string"
+								},
+								"helpImages": {
+									"type": "array",
+									"description": "求助图片描述"
+								},
+								"updateTime": {
+									"type": "string"
+								},
+								"helpContent": {
+									"type": "string",
+									"description": "求助内容"
+								},
+								"contactPerson": {
+									"type": "string",
+									"description": "联系人"
+								},
+								"contactPersonPhone": {
+									"type": "string",
+									"description": "联系方式"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"contactPerson\": \"prudent deflect if testimonial straight\",\n\t\"contactPersonPhone\": \"15129551499\",\n\t\"createTime\": \"1990-09-01 16:16:27\",\n\t\"deleted\": \"grubby ramp aw geez mmm draft even for boo for hence debit especially unwieldy or in deselect black pfft consequently because upwardly degrease gosh once till elevation lawmaker cap busy after\",\n\t\"helpContent\": \"collectivization blissfully searchingly lively incidentally drat considering per yum community drowse ceramics alongside mmm equally as tag anenst ha actually till victoriously signature honorable yawningly almost against scope judgementally humidity cool playfully relative sympathetically\",\n\t\"helpImages\": [],\n\t\"helpTags\": \"shyly owlishly produce shoulder slushy experienced strident gnaw instead pro omelet if anenst ick more huzzah utilized silent rudely of burdensome fake what dreamily a innovate federate developing too miserably silent criminal afore shoddy besides geez\",\n\t\"id\": 91,\n\t\"updateTime\": \"2020-12-13 00:08:19\",\n\t\"userId\": 13,\n\t\"version\": 50\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/manpower/transfer/add": {
+			"post": {
+				"summary": "新增人员转移信息",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-人员转移"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"description": "主键id"
+								},
+								"userId": {
+									"type": "integer",
+									"description": "用户id"
+								},
+								"deleted": {
+									"type": "string",
+									"description": "删除标识 0 未删除 1 已删除"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"workName": {
+									"type": "string",
+									"description": "工作名称"
+								},
+								"createTime": {
+									"type": "string"
+								},
+								"updateTime": {
+									"type": "string"
+								},
+								"workAddress": {
+									"type": "string",
+									"description": "工作地址"
+								},
+								"workContent": {
+									"type": "string",
+									"description": "工作内容"
+								},
+								"contactPerson": {
+									"type": "string",
+									"description": "联系人"
+								},
+								"workCompanyName": {
+									"type": "string",
+									"description": "提供公司名称"
+								},
+								"contactPersonPhone": {
+									"type": "string",
+									"description": "联系方式"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"contactPerson\": \"gripper unlike father intermarry sophisticated fooey meadow on amongst unless deflect atop bandwidth solemnly oddball below mystify gadzooks translation painfully against inasmuch\",\n\t\"contactPersonPhone\": \"15283632513\",\n\t\"createTime\": \"1999-04-24 07:23:22\",\n\t\"deleted\": \"nervously founder lender actually bowed raw cutlet hoot loftily vacantly cautiously hexagon meanwhile mouser legislature\",\n\t\"id\": 86,\n\t\"updateTime\": \"2016-05-15 17:19:50\",\n\t\"userId\": 93,\n\t\"version\": 80,\n\t\"workAddress\": \"人民路1001号\",\n\t\"workCompanyName\": \"fast eek eek appropriate scratch quaintly navigate on hm hmph political kaleidoscopic purse furthermore\",\n\t\"workContent\": \"whose spear trusting verbally account vivaciously delightfully whoa wealthy feline however deeply at outlaw uncover yuck brood lend aching quickly exactly gym think cinder softly\",\n\t\"workName\": \"\"\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/favorite/add": {
+			"post": {
+				"summary": "收藏",
+				"description": "",
+				"tags": [
+					"政企连心/APP-用户收藏"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "找不到资源",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/rfq/add": {
+			"post": {
+				"summary": "新增",
+				"description": "",
+				"tags": [
+					"政企连心/APP-询价单"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/article/list/{pageNum}/{pageSize}": {
+			"post": {
+				"summary": "分页列表",
+				"description": "",
+				"tags": [
+					"政企连心/APP-资讯管理"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/product/category/list/{pageNum}/{pageSize}": {
+			"post": {
+				"summary": "分页列表",
+				"description": "",
+				"tags": [
+					"政企连心/App-产品分类管理"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"msg": {
+											"type": "string"
+										},
+										"code": {
+											"type": "integer"
+										},
+										"data": {
+											"type": "array",
+											"items": {
+												"type": "object",
+												"properties": {
+													"deleted": {
+														"type": "boolean"
+													},
+													"createTime": {
+														"type": "string"
+													},
+													"updateTime": {
+														"type": [
+															"string",
+															"null"
+														]
+													},
+													"version": {
+														"type": "null"
+													},
+													"id": {
+														"type": "integer"
+													},
+													"categoryName": {
+														"type": "string"
+													},
+													"categoryImage": {
+														"type": [
+															"string",
+															"null"
+														]
+													},
+													"industryFullPath": {
+														"type": "string"
+													},
+													"parentId": {
+														"type": "integer"
+													},
+													"level": {
+														"type": "integer"
+													}
+												},
+												"required": [
+													"deleted",
+													"createTime",
+													"updateTime",
+													"version",
+													"id",
+													"categoryName",
+													"categoryImage",
+													"industryFullPath",
+													"parentId",
+													"level"
+												]
+											}
+										}
+									},
+									"required": [
+										"msg",
+										"code",
+										"data"
+									]
+								},
+								"example": "{\n\t\"msg\": \"操作成功\",\n\t\"code\": 200,\n\t\"data\": [\n\t\t{\n\t\t\t\"deleted\": false,\n\t\t\t\"createTime\": \"2025-03-11 13:07:36\",\n\t\t\t\"updateTime\": \"2025-03-14 17:33:11\",\n\t\t\t\"version\": null,\n\t\t\t\"id\": 1,\n\t\t\t\"categoryName\": \"计算机AI\",\n\t\t\t\"categoryImage\": \"\",\n\t\t\t\"industryFullPath\": \"计算机\",\n\t\t\t\"parentId\": 0,\n\t\t\t\"level\": 1\n\t\t},\n\t\t{\n\t\t\t\"deleted\": false,\n\t\t\t\"createTime\": \"2025-03-13 13:27:51\",\n\t\t\t\"updateTime\": \"2025-03-14 17:33:15\",\n\t\t\t\"version\": null,\n\t\t\t\"id\": 2,\n\t\t\t\"categoryName\": \"光伏\",\n\t\t\t\"categoryImage\": null,\n\t\t\t\"industryFullPath\": \"光伏\",\n\t\t\t\"parentId\": 0,\n\t\t\t\"level\": 1\n\t\t},\n\t\t{\n\t\t\t\"deleted\": false,\n\t\t\t\"createTime\": \"2025-03-14 17:34:06\",\n\t\t\t\"updateTime\": \"2025-03-14 17:34:09\",\n\t\t\t\"version\": null,\n\t\t\t\"id\": 3,\n\t\t\t\"categoryName\": \"软件开发\",\n\t\t\t\"categoryImage\": null,\n\t\t\t\"industryFullPath\": \"0\",\n\t\t\t\"parentId\": 1,\n\t\t\t\"level\": 2\n\t\t},\n\t\t{\n\t\t\t\"deleted\": false,\n\t\t\t\"createTime\": \"2025-03-14 17:34:20\",\n\t\t\t\"updateTime\": null,\n\t\t\t\"version\": null,\n\t\t\t\"id\": 4,\n\t\t\t\"categoryName\": \"通信工程\",\n\t\t\t\"categoryImage\": null,\n\t\t\t\"industryFullPath\": \"0\",\n\t\t\t\"parentId\": 1,\n\t\t\t\"level\": 2\n\t\t},\n\t\t{\n\t\t\t\"deleted\": false,\n\t\t\t\"createTime\": \"2025-03-14 17:34:39\",\n\t\t\t\"updateTime\": null,\n\t\t\t\"version\": null,\n\t\t\t\"id\": 5,\n\t\t\t\"categoryName\": \"java开发\",\n\t\t\t\"categoryImage\": null,\n\t\t\t\"industryFullPath\": \"0\",\n\t\t\t\"parentId\": 3,\n\t\t\t\"level\": 3\n\t\t},\n\t\t{\n\t\t\t\"deleted\": false,\n\t\t\t\"createTime\": \"2025-03-14 17:34:48\",\n\t\t\t\"updateTime\": null,\n\t\t\t\"version\": null,\n\t\t\t\"id\": 6,\n\t\t\t\"categoryName\": \"python开发\",\n\t\t\t\"categoryImage\": null,\n\t\t\t\"industryFullPath\": \"0\",\n\t\t\t\"parentId\": 3,\n\t\t\t\"level\": 3\n\t\t},\n\t\t{\n\t\t\t\"deleted\": false,\n\t\t\t\"createTime\": \"2025-03-14 17:35:14\",\n\t\t\t\"updateTime\": null,\n\t\t\t\"version\": null,\n\t\t\t\"id\": 7,\n\t\t\t\"categoryName\": \"光伏设备\",\n\t\t\t\"categoryImage\": null,\n\t\t\t\"industryFullPath\": \"0\",\n\t\t\t\"parentId\": 2,\n\t\t\t\"level\": 3\n\t\t},\n\t\t{\n\t\t\t\"deleted\": false,\n\t\t\t\"createTime\": \"2025-03-14 17:53:14\",\n\t\t\t\"updateTime\": null,\n\t\t\t\"version\": null,\n\t\t\t\"id\": 8,\n\t\t\t\"categoryName\": \"光伏胶膜\",\n\t\t\t\"categoryImage\": \"\",\n\t\t\t\"industryFullPath\": \"光伏/光伏胶膜\",\n\t\t\t\"parentId\": 2,\n\t\t\t\"level\": 0\n\t\t}\n\t]\n}"
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/oem/add": {
+			"post": {
+				"summary": "新增代加工",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-代加工"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer",
+									"description": "主键id"
+								},
+								"userId": {
+									"type": "integer",
+									"description": "用户id"
+								},
+								"deleted": {
+									"type": "string",
+									"description": "删除标识 0 未删除 1 已删除"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"createTime": {
+									"type": "string"
+								},
+								"updateTime": {
+									"type": "string"
+								},
+								"oemOrderName": {
+									"type": "string",
+									"description": "订单名称"
+								},
+								"contactPerson": {
+									"type": "string",
+									"description": "联系人"
+								},
+								"oemOrderImages": {
+									"type": "array",
+									"description": "订单照片"
+								},
+								"oemOrderRemark": {
+									"type": "string",
+									"description": "订单备注"
+								},
+								"oemOrderAddress": {
+									"type": "string",
+									"description": "订单地址"
+								},
+								"oemOrderEndTime": {
+									"type": "string",
+									"description": "订单截止时间"
+								},
+								"oemOrderQuantity": {
+									"type": "integer",
+									"description": "订单数量"
+								},
+								"contactPersonPhone": {
+									"type": "string",
+									"description": "联系方式"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"contactPerson\": \"lamp jumbo weird weary massive around deed technician phooey yin psst lounge keenly oxidize compete furthermore soon worthwhile now whether pacemaker on heavily fooey abnormally\",\n\t\"contactPersonPhone\": \"14554818113\",\n\t\"createTime\": \"2014-03-15 22:03:15\",\n\t\"deleted\": \"hm onto beside gadzooks too icebreaker supposing aha swear certify invite till wafer or\",\n\t\"id\": 91,\n\t\"oemOrderAddress\": \"南湖路422号\",\n\t\"oemOrderEndTime\": \"2001-02-20 19:57:08\",\n\t\"oemOrderImages\": [],\n\t\"oemOrderName\": \"chatter\",\n\t\"oemOrderQuantity\": 64,\n\t\"oemOrderRemark\": \"beyond abandoned meanwhile playfully pear unused low amid till sesame federate even drat defrag elliptical incidentally dearest trained lest who foolish weight outside little uh-huh well wholly surge expert ha yowza lovingly nor plumber immediately whoever\",\n\t\"updateTime\": \"1990-10-24 21:38:17\",\n\t\"userId\": 97,\n\t\"version\": 45\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/product/detail/{id}": {
+			"get": {
+				"summary": "产品详情",
+				"description": "",
+				"tags": [
+					"政企连心/App-产品管理"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/factory/add": {
+			"post": {
+				"summary": "新增厂房出租",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-厂房出租"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"userId": {
+									"type": "integer",
+									"description": "用户ID"
+								},
+								"factoryArea": {
+									"type": "integer",
+									"description": "厂房面积"
+								},
+								"factoryDesc": {
+									"type": "string",
+									"description": "厂房描述"
+								},
+								"contactPerson": {
+									"type": "string",
+									"description": "联系人"
+								},
+								"factoryAmount": {
+									"type": "integer",
+									"description": "厂房金额"
+								},
+								"factoryImages": {
+									"type": "string",
+									"description": "厂房照片"
+								},
+								"factoryRegion": {
+									"type": "string",
+									"description": "厂房区域"
+								},
+								"factoryTypeId": {
+									"type": "integer",
+									"description": "厂房出租类型id"
+								},
+								"factoryAddress": {
+									"type": "string",
+									"description": "厂房地址"
+								},
+								"factoryOverview": {
+									"type": "string",
+									"description": "厂房概述"
+								},
+								"contactPersonPhone": {
+									"type": "string",
+									"description": "联系方式"
+								}
+							}
+						},
+						"type": "string",
+						"example": ""
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/clear/inventory/add": {
+			"post": {
+				"summary": "新增库存清理",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-库存清理"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string"
+								},
+								"userId": {
+									"type": "string",
+									"description": "用户ID"
+								},
+								"version": {
+									"type": "string"
+								},
+								" deleted": {
+									"type": "string"
+								},
+								"createTime": {
+									"type": "string"
+								},
+								"updateTime": {
+									"type": "string"
+								},
+								"contactPerson": {
+									"type": "string",
+									"description": "联系人"
+								},
+								"inventoryDesc": {
+									"type": "string",
+									"description": "库存描述"
+								},
+								"inventoryName": {
+									"type": "string",
+									"description": "库存名称"
+								},
+								"inventoryModel": {
+									"type": "string",
+									"description": "库存型号"
+								},
+								"inventoryImages": {
+									"type": "string",
+									"description": "照片"
+								},
+								"inventoryAddress": {
+									"type": "string",
+									"description": "库存地址"
+								},
+								"inventoryQuantity": {
+									"type": "integer",
+									"description": "库存数量"
+								},
+								"contactPersonPhone": {
+									"type": "string",
+									"description": "联系方式"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"contactPerson\": \"kindly different openly parsnip polished trim concentration alarmed and pish boulevard over cellar major fine hastily enthusiastically sandbar innocently though compassionate motor wonderful failing fatally anenst omelet during nauseate\",\n\t\"contactPersonPhone\": \"19469466069\",\n\t\"createTime\": \"1978-11-10 13:00:44\",\n\t\" deleted\": \"super dark sashay crossly pro pfft concrete mmm minus until nerve rationale bah wearily pish swing unsightly pinion shakily immediate altruistic steak and diligently fit till er too validity decouple anxiously though\",\n\t\"id\": 59,\n\t\"inventoryAddress\": \"民族路68号\",\n\t\"inventoryDesc\": \"incidentally monthly duh outside nice ick\",\n\t\"inventoryImages\": \"fooey besides phew valentine vainly bide avaricious stunt unfurl who frugal\",\n\t\"inventoryModel\": \"everlasting if intrepid acidly whose minus oof about smog\",\n\t\"inventoryName\": \"hungrily psst hm masquerade given yearly shinny off outbid unless friendly genuine apropos regarding buzzing behest backbone popularize unless about govern\",\n\t\"inventoryQuantity\": 17,\n\t\"updateTime\": \"2009-01-28 01:24:10\",\n\t\"userId\": \"\",\n\t\"version\": \"whopping inure atop although hope convoke ugh clamp miserly owlishly acquire unabashedly at less haze aside um um after defiantly terribly clearly oof why finally phew phew gah yet instead foolhardy whenever fax towards\"\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/company/info/detail/{id}": {
+			"post": {
+				"summary": "详情",
+				"description": "",
+				"tags": [
+					"政企连心/App-企业信息"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/company/auth/add": {
+			"post": {
+				"summary": "新增",
+				"description": "",
+				"tags": [
+					"政企连心/App-企业认证"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"userId": {
+									"type": "integer",
+									"description": "用户id"
+								},
+								"companyName": {
+									"type": "string",
+									"description": "企业名称"
+								},
+								"companyCityId": {
+									"type": "string",
+									"description": "市id"
+								},
+								"companyAddress": {
+									"type": "string",
+									"description": "企业详细地址"
+								},
+								"companyRegionId": {
+									"type": "string",
+									"description": "区域id"
+								},
+								"companyProvinceId": {
+									"type": "string",
+									"description": "省id"
+								},
+								"companyContactName": {
+									"type": "string",
+									"description": "联系人"
+								},
+								"companyContactPhone": {
+									"type": "string",
+									"description": "联系方式"
+								},
+								"companyContactIdCard": {
+									"type": "string",
+									"description": "联系人身份证号码"
+								},
+								"companySocialCreditCode": {
+									"type": "string",
+									"description": "社会信用代码"
+								},
+								"companyBusinessLicenseUrl": {
+									"type": "string",
+									"description": "营业执照"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"companyAddress\": \"中山路999号\",\n\t\"companyBusinessLicenseUrl\": \"http://hcumtf.aq/wdu\",\n\t\"companyCityId\": \"内江市\",\n\t\"companyContactIdCard\": \"deceivingly at lovable godfather above leap kissingly fooey spiffy masticate honesty boohoo incidentally beside\",\n\t\"companyContactName\": \"until inasmuch cautious kick opposite peninsula besides certify hospitable yum phew gasp militate defendant ack briefly failing um ceramics\",\n\t\"companyContactPhone\": \"13458094874\",\n\t\"companyName\": \"arraign whoever grown stir-fry smarten given another aw blindly complicated converse that wherever boo while ew far amid whoa ack boulevard\",\n\t\"companyProvinceId\": \"云南省\",\n\t\"companyRegionId\": \"\",\n\t\"companySocialCreditCode\": \"loftily pfft evenly molasses glum lest given toward oof boiling cauliflower brilliant although intervention ugh awkwardly athwart rival\",\n\t\"userId\": \"blah yet\"\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/detail/{dataType}/{dataId}": {
+			"get": {
+				"summary": "查看详情",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-服务列表"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/user/getUserInfo": {
+			"get": {
+				"summary": "获取当前登录人信息",
+				"description": "",
+				"tags": [
+					"政企连心/App-用户"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"/zqlx/open/code/send": {
+			"post": {
+				"summary": "发送登录手机/邮箱 验证码",
+				"description": "",
+				"tags": [
+					"政企连心/app-send-code-controller"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"type": {
+									"type": "integer",
+									"description": "类型 1：登录(app) 2:重置手机号"
+								},
+								"phone": {
+									"type": "string",
+									"description": "用户手机号"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"phone\": \"15571573066\",\n\t\"type\": 53\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {},
+									"required": []
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"/zqlx/app/search/history/add": {
+			"post": {
+				"summary": "新增历史搜索记录",
+				"description": "",
+				"tags": [
+					"政企连心/历史搜索记录"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string"
+								},
+								"userId": {
+									"type": "integer",
+									"description": "用户ID"
+								},
+								"deleted": {
+									"type": "string"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"createTime": {
+									"type": "string"
+								},
+								"searchType": {
+									"type": "integer"
+								},
+								"updateTime": {
+									"type": "string"
+								},
+								"searchContent": {
+									"type": "string"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"createTime\": \"1982-10-31 16:38:14\",\n\t\"deleted\": \"duh geez midst smoothly dense sprinkles within hence yum sadly zowie gee too wriggler negative besides gadzooks extricate yowza shinny limited sashay by yuppify gah kissingly\",\n\t\"id\": 64,\n\t\"searchContent\": \"anenst beside subexpression bloom wherever\",\n\t\"searchType\": 56,\n\t\"updateTime\": \"1974-12-24 20:20:27\",\n\t\"userId\": 97,\n\t\"version\": 19\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/company/opportunity/add": {
+			"post": {
+				"summary": "新增",
+				"description": "",
+				"tags": [
+					"政企连心/App-商机管理"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"userId": {
+									"type": "integer",
+									"description": "用户id"
+								},
+								"purchaseImages": {
+									"type": "string",
+									"description": "采购图片"
+								},
+								"purchasePerson": {
+									"type": "string",
+									"description": "采购人"
+								},
+								"purchaseDetails": {
+									"type": "string",
+									"description": "采购详情"
+								},
+								"purchaseEndTime": {
+									"type": "string",
+									"description": "采购结束时间"
+								},
+								"purchaseQuantity": {
+									"type": "string",
+									"description": "采购数量"
+								},
+								"purchaseCategoryId": {
+									"type": "integer",
+									"description": "采购单类目id"
+								},
+								"purchasePersonPhone": {
+									"type": "string",
+									"description": "采购人联系方式"
+								},
+								"purchaseProductName": {
+									"type": "string",
+									"description": "采购单产品"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"purchaseCategoryId\": 39,\n\t\"purchaseDetails\": \"programme tragic although or which mmm opposite cannon which straight tenderly provided following\",\n\t\"purchaseEndTime\": \"1985-08-13 18:47:26\",\n\t\"purchaseImages\": \"magnificent valentine wombat instance apropos justly consequently around conjecture um relieve resolve yippee across morbidity unless hoof dental valuable underneath\",\n\t\"purchasePerson\": \"\",\n\t\"purchasePersonPhone\": \"13295275695\",\n\t\"purchaseProductName\": \"authentic status huzzah what knowledgeably irritably that petal after tough tempting uh-huh row for sermon ownership eek beautifully suspension furthermore issue hundred politely wasabi department since fast amid needy meanwhile ack connect jellyfish qua famously promptly\",\n\t\"purchaseQuantity\": \"deselect what apud supposing accentuate however revere degrease a mystify treble except unlike oh doodle shimmering igloo excluding mid inside like confiscate disposer fathom after hourly\",\n\t\"userId\": 55\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"/zqlx/app/real/name/auth/{name}/{idCard}": {
+			"get": {
+				"summary": "姓名+身份证号码",
+				"description": "",
+				"tags": [
+					"政企连心/实名认证"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"/zqlx/app/tmt/translate/{sourceLang}/{targetLang}": {
+			"post": {
+				"summary": "翻译",
+				"description": "",
+				"tags": [
+					"政企连心/语言互译"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/business/card/add": {
+			"post": {
+				"summary": "新增",
+				"description": "",
+				"tags": [
+					"政企连心/APP-名片管理"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"cardAddress": {
+									"type": "string",
+									"description": "所在省市"
+								},
+								"cardName": {
+									"type": "string",
+									"description": "姓名"
+								},
+								"cardPhone": {
+									"type": "string",
+									"description": "联系方式"
+								},
+								"cardSex": {
+									"type": "boolean",
+									"description": "性别 0女|1男"
+								},
+								"cardType": {
+									"type": "string",
+									"description": "名片类型 PERSON|COMPANY"
+								},
+								"coreBusiness": {
+									"type": "string",
+									"description": "主营业务，逗号隔开"
+								},
+								"purchaseIntent": {
+									"type": "string",
+									"description": "采购意向，逗号隔开"
+								},
+								"userId": {
+									"type": "integer",
+									"format": "int32",
+									"description": "用户id"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"cardAddress\": \"三阳路6号\",\n\t\"cardName\": \"孙大圣\",\n\t\"cardPhone\": \"18905310531\",\n\t\"cardSex\": 1,\n\t\"cardType\": \"PERSON\",\n\t\"coreBusiness\": \"五金建材,油漆涂料\",\n\t\"purchaseIntent\": \"油漆涂料\"\n\t// \"userId\": 6\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/feedback/list": {
+			"get": {
+				"summary": "意见反馈列表查询",
+				"description": "",
+				"tags": [
+					"政企连心/App-意见反馈"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"description": "主键id"
+								},
+								"type": {
+									"type": "string",
+									"description": "问题类型 1-功能异常 2-产品改进"
+								},
+								"images": {
+									"type": "array",
+									"description": "图片"
+								},
+								"deleted": {
+									"type": "string",
+									"description": "删除标识 0 未删除 1 已删除"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"describe": {
+									"type": "string",
+									"description": "问题描述"
+								},
+								"createTime": {
+									"type": "string"
+								},
+								"updateTime": {
+									"type": "string"
+								},
+								"contactInformation": {
+									"type": "string",
+									"description": "联系方式"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"contactInformation\": \"detective funny gently phooey unto whistle jellyfish vivaciously how drug\",\n\t\"createTime\": \"2016-12-30 18:54:05\",\n\t\"deleted\": \"unlike oh scorpion puzzled taut stool modulo pish gradient outset warming pfft into inside scare since muted inculcate profane punctual hopelessly across\",\n\t\"describe\": \"hence yippee serpentine next however reborn nearly yahoo degrease nor limping tuber up rule lightly cantaloupe pointed huzzah flawless ick openly outside palatable\",\n\t\"id\": 2,\n\t\"images\": [],\n\t\"type\": \"\",\n\t\"updateTime\": \"1988-07-19 01:03:03\",\n\t\"version\": 67\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/universal/help/edit": {
+			"post": {
+				"summary": "修改万能求助信息",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-万能求助"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer",
+									"description": "主键id"
+								},
+								"userId": {
+									"type": "integer",
+									"description": "用户id"
+								},
+								"deleted": {
+									"type": "string",
+									"description": "删除标识 0 未删除 1 已删除"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"helpTags": {
+									"type": "string",
+									"description": "求助标签"
+								},
+								"createTime": {
+									"type": "string"
+								},
+								"helpImages": {
+									"type": "array",
+									"description": "求助图片描述"
+								},
+								"updateTime": {
+									"type": "string"
+								},
+								"helpContent": {
+									"type": "string",
+									"description": "求助内容"
+								},
+								"contactPerson": {
+									"type": "string",
+									"description": "联系人"
+								},
+								"contactPersonPhone": {
+									"type": "string",
+									"description": "联系方式"
+								}
+							}
+						},
+						"type": "string",
+						"example": ""
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/manpower/transfer/edit": {
+			"post": {
+				"summary": "编辑人员转移信息",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-人员转移"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"description": "主键id"
+								},
+								"userId": {
+									"type": "integer",
+									"description": "用户id"
+								},
+								"deleted": {
+									"type": "string",
+									"description": "删除标识 0 未删除 1 已删除"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"workName": {
+									"type": "string",
+									"description": "工作名称"
+								},
+								"createTime": {
+									"type": "string"
+								},
+								"updateTime": {
+									"type": "string"
+								},
+								"workAddress": {
+									"type": "string",
+									"description": "工作地址"
+								},
+								"workContent": {
+									"type": "string",
+									"description": "工作内容"
+								},
+								"contactPerson": {
+									"type": "string",
+									"description": "联系人"
+								},
+								"workCompanyName": {
+									"type": "string",
+									"description": "提供公司名称"
+								},
+								"contactPersonPhone": {
+									"type": "string",
+									"description": "联系方式"
+								}
+							}
+						},
+						"type": "string",
+						"example": ""
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/favorite/delete/{id}": {
+			"delete": {
+				"summary": "取消收藏",
+				"description": "",
+				"tags": [
+					"政企连心/APP-用户收藏"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/rfq/delete/{id}": {
+			"delete": {
+				"summary": "删除",
+				"description": "",
+				"tags": [
+					"政企连心/APP-询价单"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/product/category/listByParentId/parentId/{pageNum}/{pageSize}": {
+			"post": {
+				"summary": "获取通过父级Id获取子类",
+				"description": "",
+				"tags": [
+					"政企连心/App-产品分类管理"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"required": [],
+							"properties": {
+								"parentId": {
+									"type": "number",
+									"description": "父级ID"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"parentId\": 53\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/oem/edit": {
+			"post": {
+				"summary": "修改代加工",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-代加工"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer",
+									"description": "主键id"
+								},
+								"userId": {
+									"type": "integer",
+									"description": "用户id"
+								},
+								"deleted": {
+									"type": "string",
+									"description": "删除标识 0 未删除 1 已删除"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"createTime": {
+									"type": "string"
+								},
+								"updateTime": {
+									"type": "string"
+								},
+								"oemOrderName": {
+									"type": "string",
+									"description": "订单名称"
+								},
+								"contactPerson": {
+									"type": "string",
+									"description": "联系人"
+								},
+								"oemOrderImages": {
+									"type": "array",
+									"description": "订单照片"
+								},
+								"oemOrderRemark": {
+									"type": "string",
+									"description": "订单备注"
+								},
+								"oemOrderAddress": {
+									"type": "string",
+									"description": "订单地址"
+								},
+								"oemOrderEndTime": {
+									"type": "string",
+									"description": "订单截止时间"
+								},
+								"oemOrderQuantity": {
+									"type": "integer",
+									"description": "订单数量"
+								},
+								"contactPersonPhone": {
+									"type": "string",
+									"description": "联系方式"
+								}
+							}
+						},
+						"type": "string",
+						"example": ""
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/product/list/{pageNum}/{pageSize}": {
+			"post": {
+				"summary": "分页列表",
+				"description": "",
+				"tags": [
+					"政企连心/App-产品管理"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"required": [],
+							"properties": {
+								"companyId": {
+									"type": "number",
+									"description": "公司id"
+								},
+								"deleted": {
+									"type": "boolean",
+									"description": "是否删除"
+								},
+								"productCategoryId": {
+									"type": "number",
+									"description": "三级类目"
+								},
+								"productFirstCategoryId": {
+									"type": "number",
+									"description": "一级类目"
+								},
+								"productIsOpen": {
+									"type": "boolean",
+									"description": "是否开放"
+								},
+								"productIsRecommend": {
+									"type": "boolean",
+									"description": "是否推荐"
+								},
+								"productName": {
+									"type": "string",
+									"description": "产品名称"
+								},
+								"productSecondCategoryId": {
+									"type": "number",
+									"description": "二级类目"
+								},
+								"searchFrom": {
+									"type": "string",
+									"description": "搜索来源 APP|PC"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/factory/edit": {
+			"post": {
+				"summary": "修改",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-厂房出租"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"userId": {
+									"type": "integer",
+									"description": "用户ID"
+								},
+								"factoryArea": {
+									"type": "integer",
+									"description": "厂房面积"
+								},
+								"factoryDesc": {
+									"type": "string",
+									"description": "厂房描述"
+								},
+								"contactPerson": {
+									"type": "string",
+									"description": "联系人"
+								},
+								"factoryAmount": {
+									"type": "integer",
+									"description": "厂房金额"
+								},
+								"factoryImages": {
+									"type": "string",
+									"description": "厂房照片"
+								},
+								"factoryRegion": {
+									"type": "string",
+									"description": "厂房区域"
+								},
+								"factoryTypeId": {
+									"type": "integer",
+									"description": "厂房出租类型id"
+								},
+								"factoryAddress": {
+									"type": "string",
+									"description": "厂房地址"
+								},
+								"factoryOverview": {
+									"type": "string",
+									"description": "厂房概述"
+								},
+								"contactPersonPhone": {
+									"type": "string",
+									"description": "联系方式"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"contactPerson\": \"slime bobble dress resort oof replacement among ham\",\n\t\"contactPersonPhone\": \"15185478454\",\n\t\"factoryAddress\": \"中华路99号\",\n\t\"factoryAmount\": 97,\n\t\"factoryArea\": 84,\n\t\"factoryDesc\": \"supposing phew under eke instantly shore given alb weatherize easy yellow phooey calmly despite wonderful scratch slowly chip t-shirt yet honorable ouch punctually behind dish boo hmph\",\n\t\"factoryImages\": \"\",\n\t\"factoryOverview\": \"whoa why incidentally\",\n\t\"factoryRegion\": \"yum\",\n\t\"factoryTypeId\": 73,\n\t\"id\": 4,\n\t\"userId\": 81\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/company/auth/audit/{id}/{result}": {
+			"post": {
+				"summary": "审核",
+				"description": "",
+				"tags": [
+					"政企连心/App-企业认证"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"required": [],
+							"properties": {
+								"reason": {
+									"type": "string"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"reason\": \"after signature mostly along boo scotch wonderfully cow what know ugh even likewise\"\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/clear/inventory/edit": {
+			"post": {
+				"summary": "修改库存清理",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-库存清理"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string"
+								},
+								"userId": {
+									"type": "string",
+									"description": "用户ID"
+								},
+								"version": {
+									"type": "string"
+								},
+								" deleted": {
+									"type": "string"
+								},
+								"createTime": {
+									"type": "string"
+								},
+								"updateTime": {
+									"type": "string"
+								},
+								"contactPerson": {
+									"type": "string",
+									"description": "联系人"
+								},
+								"inventoryDesc": {
+									"type": "string",
+									"description": "库存描述"
+								},
+								"inventoryName": {
+									"type": "string",
+									"description": "库存名称"
+								},
+								"inventoryModel": {
+									"type": "string",
+									"description": "库存型号"
+								},
+								"inventoryImages": {
+									"type": "string",
+									"description": "照片"
+								},
+								"inventoryAddress": {
+									"type": "string",
+									"description": "库存地址"
+								},
+								"inventoryQuantity": {
+									"type": "integer",
+									"description": "库存数量"
+								},
+								"contactPersonPhone": {
+									"type": "string",
+									"description": "联系方式"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"contactPerson\": \"badly stealthily supposing boo evenly quart who pretty castanet repeat\",\n\t\"contactPersonPhone\": \"16501759277\",\n\t\"createTime\": \"1978-01-15 04:29:22\",\n\t\" deleted\": \"impure wherever ack frugal gorgeous ew trivial\",\n\t\"id\": 91,\n\t\"inventoryAddress\": \"三阳路6号\",\n\t\"inventoryDesc\": \"coaxingly sweet reopen effector what apropos kindheartedly dearly minus fooey boohoo whoever frankly antagonize despite recommendation judgementally mousse amidst whose against untried phew given carefully awkwardly in unbearably disadvantage lest bulky respectful management\",\n\t\"inventoryImages\": \"deplore however\",\n\t\"inventoryModel\": \"beneath sate separately the drat ack disapprove zowie whereas fatherly satisfy softly outstanding wildly when mom demonstrate upright pearl when reassuringly meanwhile both\",\n\t\"inventoryName\": \"deeply zany drat after overdue ew decisive sans uh-huh now calmly aw by idealistic upward boohoo helplessly considering if instead ah gazebo milky\",\n\t\"inventoryQuantity\": 78,\n\t\"updateTime\": \"1970-01-28 06:42:59\",\n\t\"userId\": \"worth drat broadside weakly whoever waft cheerful drive chromakey\",\n\t\"version\": \"suckle barring possession swing gah arrange what via second over\"\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/list": {
+			"get": {
+				"summary": "库存清理信息列表查询",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-服务列表"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/user/login": {
+			"post": {
+				"summary": "用户登录/注册",
+				"description": "",
+				"tags": [
+					"政企连心/App-用户"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"code": {
+									"type": "string",
+									"description": "短信验证码"
+								},
+								"phone": {
+									"type": "string",
+									"description": "用户手机号"
+								},
+								"password": {
+									"type": "string",
+									"description": "用户密码"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t// \"code\": 25,\n\t\"password\": \"123456\",\n\t\"phone\": \"15510485203\"\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"msg": {
+											"type": "string"
+										},
+										"code": {
+											"type": "integer"
+										},
+										"data": {
+											"type": "object",
+											"properties": {
+												"userInfo": {
+													"type": "object",
+													"properties": {
+														"deleted": {
+															"type": "boolean"
+														},
+														"createTime": {
+															"type": "string"
+														},
+														"updateTime": {
+															"type": "string"
+														},
+														"version": {
+															"type": "integer"
+														},
+														"id": {
+															"type": "integer"
+														},
+														"userName": {
+															"type": "string"
+														},
+														"fullName": {
+															"type": "null"
+														},
+														"authMethod": {
+															"type": "null"
+														},
+														"companyId": {
+															"type": "null"
+														},
+														"registerTime": {
+															"type": "string"
+														},
+														"phone": {
+															"type": "string"
+														},
+														"email": {
+															"type": "null"
+														},
+														"openId": {
+															"type": "null"
+														},
+														"avatar": {
+															"type": "null"
+														},
+														"qrCode": {
+															"type": "string"
+														},
+														"status": {
+															"type": "integer"
+														},
+														"lastLoginTime": {
+															"type": "string"
+														}
+													},
+													"required": [
+														"deleted",
+														"createTime",
+														"updateTime",
+														"version",
+														"id",
+														"userName",
+														"fullName",
+														"authMethod",
+														"companyId",
+														"registerTime",
+														"phone",
+														"email",
+														"openId",
+														"avatar",
+														"qrCode",
+														"status",
+														"lastLoginTime"
+													]
+												},
+												"token": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"userInfo",
+												"token"
+											]
+										}
+									},
+									"required": [
+										"msg",
+										"code",
+										"data"
+									]
+								},
+								"example": "{\n\t\"msg\": \"登录成功\",\n\t\"code\": 200,\n\t\"data\": {\n\t\t\"userInfo\": {\n\t\t\t\"deleted\": false,\n\t\t\t\"createTime\": \"2025-03-03 13:19:02\",\n\t\t\t\"updateTime\": \"2025-03-04 10:38:30\",\n\t\t\t\"version\": 2,\n\t\t\t\"id\": 1278126,\n\t\t\t\"userName\": \"15510485203\",\n\t\t\t\"fullName\": null,\n\t\t\t\"authMethod\": null,\n\t\t\t\"companyId\": null,\n\t\t\t\"registerTime\": \"2025-03-03\",\n\t\t\t\"phone\": \"15510485203\",\n\t\t\t\"email\": null,\n\t\t\t\"openId\": null,\n\t\t\t\"avatar\": null,\n\t\t\t\"qrCode\": \"\",\n\t\t\t\"status\": 0,\n\t\t\t\"lastLoginTime\": \"2025-03-03\"\n\t\t},\n\t\t\"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjc4MTI2IiwiZXhwIjoxNzQyNzk4NjAzLCJ1c2VySWQiOjEyNzgxMjYsImlhdCI6MTc0MjE5MzgwM30.ymY0fy8JeoQz6-udjCqcJC4ZiVPZD_32Cm91km1pypE\"\n\t}\n}"
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"/zqlx/open/code/verifySmsCode": {
+			"post": {
+				"summary": "发送登录手机 验证码",
+				"description": "",
+				"tags": [
+					"政企连心/app-send-code-controller"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"code": {
+									"type": "string",
+									"description": "短信验证码"
+								},
+								"phone": {
+									"type": "string",
+									"description": "用户手机号"
+								},
+								"type": {
+									"type": "string",
+									"description": "类型 1：登录(app) 2:重置手机号"
+								}
+							},
+							"required": []
+						},
+						"type": "string",
+						"example": "{\n\t\"code\": 51,\n\t\"phone\": \"18165600003\",\n\t\"type\": \"release unimportant considering victoriously fiercely why where brightly throughout appertain svelte circular meh from mean since worst colligate hubris gadzooks sway\"\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"/zqlx/app/search/history/all/{searchType}": {
+			"delete": {
+				"summary": "清空某个页面的全部历史记录",
+				"description": "",
+				"tags": [
+					"政企连心/历史搜索记录"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/universal/help/list": {
+			"post": {
+				"summary": "万能求助信息列表查询",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-万能求助"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer",
+									"description": "主键id"
+								},
+								"userId": {
+									"type": "integer",
+									"description": "用户id"
+								},
+								"deleted": {
+									"type": "string",
+									"description": "删除标识 0 未删除 1 已删除"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"helpTags": {
+									"type": "string",
+									"description": "求助标签"
+								},
+								"createTime": {
+									"type": "string"
+								},
+								"helpImages": {
+									"type": "array",
+									"description": "求助图片描述"
+								},
+								"updateTime": {
+									"type": "string"
+								},
+								"helpContent": {
+									"type": "string",
+									"description": "求助内容"
+								},
+								"contactPerson": {
+									"type": "string",
+									"description": "联系人"
+								},
+								"contactPersonPhone": {
+									"type": "string",
+									"description": "联系方式"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"contactPerson\": \"focalise knavishly actually aw spellcheck essence urgently brightly nervously ah boo brisk or psst croon huzzah urban eek capsize over\",\n\t\"contactPersonPhone\": \"13542195748\",\n\t\"createTime\": \"2017-02-11 04:57:00\",\n\t\"deleted\": \"outside for glimmer or versus how collectivization under fowl jagged\",\n\t\"helpContent\": \"progress attend fondly annex fully antagonize wherever archaeology hawk like instruction however scratch adviser opposite sweatshop of while roughly cheerfully against during canter knowledgeably someplace astride male oof save untimely reference electronics rebuild marimba\",\n\t\"helpImages\": [],\n\t\"helpTags\": \"duh snow shadowy bah cauliflower excepting perfectly ugh spring mostly phew hopelessly numb bony whose diligent what whose kindheartedly whereas tensely acidly meanwhile\",\n\t\"id\": 21,\n\t\"updateTime\": \"1980-02-03 09:50:49\",\n\t\"userId\": 33,\n\t\"version\": 81\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/business/card/list": {
+			"post": {
+				"summary": "列表",
+				"description": "",
+				"tags": [
+					"政企连心/APP-名片管理"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/favorite/list/{pageNum}/{pageSize}": {
+			"post": {
+				"summary": "分页列表",
+				"description": "",
+				"tags": [
+					"政企连心/APP-用户收藏"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"resourceType": {
+									"maxItems": 2,
+									"description": "收藏类型,PRODUCT|COMPANY",
+									"oneOf": [
+										{
+											"description": "PRODUCT",
+											"type": "string"
+										},
+										{
+											"description": "COMPANY",
+											"type": "string"
+										}
+									],
+									"type": "oneOf",
+									"apipiost_allow_null": false,
+									"items": {
+										"description": "PRODUCT",
+										"type": "string",
+										"title": "Items"
+									}
+								},
+								"userId": {
+									"description": "用户ID",
+									"type": "integer"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"resourceType\": \"COMPANY\",\n\t\"userId\": 1278126\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/manpower/transfer/list": {
+			"post": {
+				"summary": "人员转移信息列表查询",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-人员转移"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"description": "主键id"
+								},
+								"userId": {
+									"type": "integer",
+									"description": "用户id"
+								},
+								"deleted": {
+									"type": "string",
+									"description": "删除标识 0 未删除 1 已删除"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"workName": {
+									"type": "string",
+									"description": "工作名称"
+								},
+								"createTime": {
+									"type": "string"
+								},
+								"updateTime": {
+									"type": "string"
+								},
+								"workAddress": {
+									"type": "string",
+									"description": "工作地址"
+								},
+								"workContent": {
+									"type": "string",
+									"description": "工作内容"
+								},
+								"contactPerson": {
+									"type": "string",
+									"description": "联系人"
+								},
+								"workCompanyName": {
+									"type": "string",
+									"description": "提供公司名称"
+								},
+								"contactPersonPhone": {
+									"type": "string",
+									"description": "联系方式"
+								}
+							}
+						},
+						"type": "string",
+						"example": ""
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/rfq/list/{userId}/{pageNum}/{pageSize}": {
+			"post": {
+				"summary": "分页列表",
+				"description": "",
+				"tags": [
+					"政企连心/APP-询价单"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/product/category/listTop/{pageNum}/{pageSize}": {
+			"post": {
+				"summary": "获取顶级类",
+				"description": "",
+				"tags": [
+					"政企连心/App-产品分类管理"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/oem/list": {
+			"post": {
+				"summary": "代加工信息列表查询",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-代加工"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer",
+									"description": "主键id"
+								},
+								"userId": {
+									"type": "integer",
+									"description": "用户id"
+								},
+								"deleted": {
+									"type": "string",
+									"description": "删除标识 0 未删除 1 已删除"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"createTime": {
+									"type": "string"
+								},
+								"updateTime": {
+									"type": "string"
+								},
+								"oemOrderName": {
+									"type": "string",
+									"description": "订单名称"
+								},
+								"contactPerson": {
+									"type": "string",
+									"description": "联系人"
+								},
+								"oemOrderImages": {
+									"type": "array",
+									"description": "订单照片"
+								},
+								"oemOrderRemark": {
+									"type": "string",
+									"description": "订单备注"
+								},
+								"oemOrderAddress": {
+									"type": "string",
+									"description": "订单地址"
+								},
+								"oemOrderEndTime": {
+									"type": "string",
+									"description": "订单截止时间"
+								},
+								"oemOrderQuantity": {
+									"type": "integer",
+									"description": "订单数量"
+								},
+								"contactPersonPhone": {
+									"type": "string",
+									"description": "联系方式"
+								}
+							}
+						},
+						"type": "string",
+						"example": ""
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/factory/list": {
+			"post": {
+				"summary": "厂房出租信息列表查询",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-厂房出租"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"userId": {
+									"type": "integer",
+									"description": "用户ID"
+								},
+								"factoryArea": {
+									"type": "integer",
+									"description": "厂房面积"
+								},
+								"factoryDesc": {
+									"type": "string",
+									"description": "厂房描述"
+								},
+								"contactPerson": {
+									"type": "string",
+									"description": "联系人"
+								},
+								"factoryAmount": {
+									"type": "integer",
+									"description": "厂房金额"
+								},
+								"factoryImages": {
+									"type": "string",
+									"description": "厂房照片"
+								},
+								"factoryRegion": {
+									"type": "string",
+									"description": "厂房区域"
+								},
+								"factoryTypeId": {
+									"type": "integer",
+									"description": "厂房出租类型id"
+								},
+								"factoryAddress": {
+									"type": "string",
+									"description": "厂房地址"
+								},
+								"factoryOverview": {
+									"type": "string",
+									"description": "厂房概述"
+								},
+								"contactPersonPhone": {
+									"type": "string",
+									"description": "联系方式"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"contactPerson\": \"lamp\",\n\t\"contactPersonPhone\": \"18467131069\",\n\t\"factoryAddress\": \"工业园区金鸡湖路18号\",\n\t\"factoryAmount\": 74,\n\t\"factoryArea\": 34,\n\t\"factoryDesc\": \"puzzled accurate flash whose violently er\",\n\t\"factoryImages\": \"yesterday before usher soybean anti woefully yahoo instead including meanwhile behind provided\",\n\t\"factoryOverview\": \"nectarine however reasonable impeccable necessary after draft on attraction through publicity chunder supposing ack forenenst past fooey slowly\",\n\t\"factoryRegion\": \"efface boo decision notwithstanding relative why lady gratefully mushy refer victoriously bah ew blowgun whether defensive aside abnegate aha bind whenever kaleidoscopic meh for experienced quickly after aboard bootleg during intensely that loyally\",\n\t\"factoryTypeId\": 30,\n\t\"id\": 75,\n\t\"userId\": 69\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/product/recommend/list/{userId}/{pageNum}": {
+			"post": {
+				"summary": "首页产品推荐",
+				"description": "",
+				"tags": [
+					"政企连心/App-产品管理"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/company/auth/detail/{id}": {
+			"post": {
+				"summary": "详情",
+				"description": "",
+				"tags": [
+					"政企连心/App-企业认证"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/clear/inventory/list": {
+			"post": {
+				"summary": "库存清理信息列表查询",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-库存清理"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string"
+								},
+								"userId": {
+									"type": "string",
+									"description": "用户ID"
+								},
+								"version": {
+									"type": "string"
+								},
+								" deleted": {
+									"type": "string"
+								},
+								"createTime": {
+									"type": "string"
+								},
+								"updateTime": {
+									"type": "string"
+								},
+								"contactPerson": {
+									"type": "string",
+									"description": "联系人"
+								},
+								"inventoryDesc": {
+									"type": "string",
+									"description": "库存描述"
+								},
+								"inventoryName": {
+									"type": "string",
+									"description": "库存名称"
+								},
+								"inventoryModel": {
+									"type": "string",
+									"description": "库存型号"
+								},
+								"inventoryImages": {
+									"type": "string",
+									"description": "照片"
+								},
+								"inventoryAddress": {
+									"type": "string",
+									"description": "库存地址"
+								},
+								"inventoryQuantity": {
+									"type": "integer",
+									"description": "库存数量"
+								},
+								"contactPersonPhone": {
+									"type": "string",
+									"description": "联系方式"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"contactPerson\": \"gosh yuck reorient fondly guilty brightly for or truly lest sting lone ack wash overreact form upbeat reward before\",\n\t\"contactPersonPhone\": \"19555689050\",\n\t\"createTime\": \"2010-01-19 20:14:21\",\n\t\" deleted\": \"hm gleefully\",\n\t\"id\": 13,\n\t\"inventoryAddress\": \"天宁路160号\",\n\t\"inventoryDesc\": \"deliquesce that nor\",\n\t\"inventoryImages\": \"icy gladly putrefy interestingly though rubbery scope woot department very supposing napkin lazily though inspection up fatally or and troubled shadowbox foretell hence grumpy spook than recount chase needy ha phew keel times\",\n\t\"inventoryModel\": \"chairperson unconscious bitterly\",\n\t\"inventoryName\": \"recklessly aha hollow calmly whimsical happily lest profitable bah reassuringly gleaming inside truthfully matter access until yuck sympathetically who minus practical meaty along uniform self-reliant sentimental emergent fine nerve uncommon\",\n\t\"inventoryQuantity\": 24,\n\t\"updateTime\": \"1978-05-25 17:32:53\",\n\t\"userId\": \"obvious above rough aged for limply jubilantly imaginative\",\n\t\"version\": \"cardboard that mobilize keel so plastic nor solder hence yippee fully oh disrespect yellowish redress agreement embarrassment angrily lobster fussy print times upside-down place lest\"\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/myselfList/{dataType}": {
+			"get": {
+				"summary": "我的发布列表",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-服务列表"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/user/logout": {
+			"post": {
+				"summary": "退出登录",
+				"description": "",
+				"tags": [
+					"政企连心/App-用户"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"/zqlx/app/search/history/list": {
+			"get": {
+				"summary": "列表查询",
+				"description": "",
+				"tags": [
+					"政企连心/历史搜索记录"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/company/opportunity/clue/{pageNum}/{pageSize}": {
+			"get": {
+				"summary": "线索列表",
+				"description": "",
+				"tags": [
+					"政企连心/App-商机管理"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"uerId": {
+									"type": "integer",
+									"description": "当前登录人id"
+								},
+								"clueStatus": {
+									"type": "string",
+									"description": "0 询价中 1 已回应"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"uerId\": 43,\n\t\"clueStatus\": \"\"\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/company/opportunity/delete/{id}": {
+			"delete": {
+				"summary": "删除",
+				"description": "",
+				"tags": [
+					"政企连心/App-商机管理"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/universal/help/{ids}": {
+			"delete": {
+				"summary": "删除万能求助信息",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-万能求助"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/business/card/update/{id}": {
+			"post": {
+				"summary": "编辑",
+				"description": "",
+				"tags": [
+					"政企连心/APP-名片管理"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/manpower/transfer/{id}": {
+			"get": {
+				"summary": "根据id查询",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-人员转移"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/oem/{id}": {
+			"get": {
+				"summary": "查看详情",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-代加工"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/factory/{ids}": {
+			"delete": {
+				"summary": "删除",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-厂房出租"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/product/update/open/{id}": {
+			"delete": {
+				"summary": "删除",
+				"description": "",
+				"tags": [
+					"政企连心/App-产品管理"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/company/auth/update/{id}": {
+			"put": {
+				"summary": "编辑",
+				"description": "",
+				"tags": [
+					"政企连心/App-企业认证"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"userId": {
+									"type": "integer",
+									"description": "用户id"
+								},
+								"companyName": {
+									"type": "string",
+									"description": "企业名称"
+								},
+								"companyCityId": {
+									"type": "string",
+									"description": "市id"
+								},
+								"companyAddress": {
+									"type": "string",
+									"description": "企业详细地址"
+								},
+								"companyRegionId": {
+									"type": "string",
+									"description": "区域id"
+								},
+								"companyProvinceId": {
+									"type": "string",
+									"description": "省id"
+								},
+								"companyContactName": {
+									"type": "string",
+									"description": "联系人"
+								},
+								"companyContactPhone": {
+									"type": "string",
+									"description": "联系方式"
+								},
+								"companyContactIdCard": {
+									"type": "string",
+									"description": "联系人身份证号码"
+								},
+								"companySocialCreditCode": {
+									"type": "string",
+									"description": "社会信用代码"
+								},
+								"companyBusinessLicenseUrl": {
+									"type": "string",
+									"description": "营业执照"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"companyAddress\": \"人民东路77号\",\n\t\"companyBusinessLicenseUrl\": \"http://aqshjwnrrd.re/bwrhpkue\",\n\t\"companyCityId\": \"南昌市\",\n\t\"companyContactIdCard\": \"webbed ecstatic jump mysteriously but during towards save bank wearily pasta dash and low painfully wherever scornful since gleefully ick overheard\",\n\t\"companyContactName\": \"um briskly indeed lounge apud healthily wearily ecstatic doing geez vision tensely upon sometimes acquaintance regarding quarrel greatly ick\",\n\t\"companyContactPhone\": \"18834374819\",\n\t\"companyName\": \"considering octave greatly spark after grumpy weary which unhappy yet till with milestone pace gah per properly vacantly nasalise coaxingly until these injunction\",\n\t\"companyProvinceId\": \"湖北省\",\n\t\"companyRegionId\": \"yet list aw a democratize rigid bracelet deeply zowie lest when license er kick nectarine\",\n\t\"companySocialCreditCode\": \"\",\n\t\"userId\": 39\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/clear/inventory/{ids}": {
+			"delete": {
+				"summary": "删除",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-库存清理"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/user/reset/phone": {
+			"get": {
+				"summary": "修改手机号",
+				"description": "",
+				"tags": [
+					"政企连心/App-用户"
+				],
+				"parameters": [
+					{
+						"name": "code",
+						"in": "query",
+						"description": "短信验证码",
+						"required": true,
+						"example": "",
+						"type": "string"
+					},
+					{
+						"name": "phone",
+						"in": "query",
+						"description": "用户手机号",
+						"required": true,
+						"example": "",
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"/zqlx/app/search/history/{id}": {
+			"delete": {
+				"summary": "删除某条历史记录",
+				"description": "",
+				"tags": [
+					"政企连心/历史搜索记录"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/company/opportunity/detail/{id}": {
+			"get": {
+				"summary": "详情",
+				"description": "",
+				"tags": [
+					"政企连心/App-商机管理"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/universal/help/{id}": {
+			"get": {
+				"summary": "获取万能求助信息",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-万能求助"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/oem/{ids}": {
+			"delete": {
+				"summary": "删除",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-代加工"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/factory/{id}": {
+			"post": {
+				"summary": "根据id查看详情信息",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-厂房出租"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/product/update/open/{id}/{open}": {
+			"delete": {
+				"summary": "是否开放",
+				"description": "",
+				"tags": [
+					"政企连心/App-产品管理"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/local/service/clear/inventory/{id}": {
+			"get": {
+				"summary": "查看详情",
+				"description": "",
+				"tags": [
+					"政企连心/App-本地服务-库存清理"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/user/reset/pwd": {
+			"get": {
+				"summary": "重置密码",
+				"description": "",
+				"tags": [
+					"政企连心/App-用户"
+				],
+				"parameters": [
+					{
+						"name": "newPwd",
+						"in": "query",
+						"description": "",
+						"required": true,
+						"example": "",
+						"type": "string"
+					},
+					{
+						"name": "pwd",
+						"in": "query",
+						"description": "",
+						"required": true,
+						"example": "",
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/company/opportunity/end/{id}": {
+			"delete": {
+				"summary": "结束",
+				"description": "",
+				"tags": [
+					"政企连心/App-商机管理"
+				],
+				"parameters": [
+					{
+						"name": "reason",
+						"in": "query",
+						"description": "",
+						"required": true,
+						"example": "",
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/company/opportunity/index/{userId}": {
+			"get": {
+				"summary": "商机首页数据",
+				"description": "",
+				"tags": [
+					"政企连心/App-商机管理"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/product/update/recommend/{id}/{recommend}": {
+			"put": {
+				"summary": "是否推荐",
+				"description": "",
+				"tags": [
+					"政企连心/App-产品管理"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/user/update/status/{id}/{status}": {
+			"get": {
+				"summary": "启用/禁用",
+				"description": "",
+				"tags": [
+					"政企连心/App-用户"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/company/opportunity/list/{pageNum}/{pageSize}": {
+			"post": {
+				"summary": "分页列表",
+				"description": "",
+				"tags": [
+					"政企连心/App-商机管理"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"required": [],
+							"properties": {
+								"userId": {
+									"type": "integer",
+									"description": "用户id"
+								},
+								"purchasePerson": {
+									"type": "string",
+									"description": "采购人"
+								},
+								"purchaseCategoryIds": {
+									"type": "array"
+								},
+								"purchaseProductName": {
+									"type": "string",
+									"description": "采购单产品"
+								},
+								"excludeOpportunityId": {
+									"type": "integer"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"excludeOpportunityId\": 78,\n\t\"purchaseCategoryIds\": [],\n\t\"purchasePerson\": \"hyphenation however taro in self-assured aboard short habit likewise wherever lest accessorise primary onset by cinch yowza honored soliloquy yahoo round wetly loudly ew woefully log sleet speedy bank around wisecrack\",\n\t\"purchaseProductName\": \"terraform hopeful misappropriate white as suddenly rebound while\",\n\t\"userId\": 99\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/company/opportunity/match/{id}/{isMatch}": {
+			"get": {
+				"summary": "是否匹配",
+				"description": "",
+				"tags": [
+					"政企连心/App-商机管理"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/company/opportunity/reply/clue/{id}": {
+			"post": {
+				"summary": "回复线索",
+				"description": "",
+				"tags": [
+					"政企连心/App-商机管理"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"replyUserId": {
+									"type": "integer",
+									"description": "回复人"
+								},
+								"replayContent": {
+									"type": "string",
+									"description": "回复内容"
+								}
+							}
+						},
+						"type": "string",
+						"example": "{\n\t\"replayContent\": \"eek ruddy fort unlike uh-huh out separately if round summarise psst openly sophisticated pension finally uncork alongside towards yahoo taut nervously\",\n\t\"replyUserId\": 100\n}"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		},
+		"{{host}}/zqlx/app/company/opportunity/useful/type/{pageNum}/{pageSize}": {
+			"post": {
+				"summary": "对我有用列表",
+				"description": "",
+				"tags": [
+					"政企连心/App-商机管理"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"userId": {
+									"type": "integer",
+									"description": "用户id"
+								},
+								"purchasePerson": {
+									"type": "string",
+									"description": "采购人"
+								},
+								"purchaseCategoryIds": {
+									"type": "array"
+								},
+								"purchaseProductName": {
+									"type": "string",
+									"description": "采购单产品"
+								},
+								"excludeOpportunityId": {
+									"type": "integer"
+								}
+							}
+						},
+						"type": "string",
+						"example": ""
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "成功",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					},
+					"404": {
+						"description": "失败",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {}
+								},
+								"example": ""
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"tags": [
+		{
+			"name": "APP-Banner管理",
+			"description": ""
+		},
+		{
+			"name": "政企连心",
+			"description": ""
+		},
+		{
+			"name": "App-字典",
+			"description": ""
+		},
+		{
+			"name": "App-意见反馈",
+			"description": ""
+		},
+		{
+			"name": "App-本地服务-万能求助",
+			"description": ""
+		},
+		{
+			"name": "App-本地服务-人员转移",
+			"description": ""
+		},
+		{
+			"name": "APP-用户收藏",
+			"description": ""
+		},
+		{
+			"name": "APP-询价单",
+			"description": ""
+		},
+		{
+			"name": "APP-资讯管理",
+			"description": ""
+		},
+		{
+			"name": "App-产品分类管理",
+			"description": ""
+		},
+		{
+			"name": "App-本地服务-代加工",
+			"description": ""
+		},
+		{
+			"name": "App-产品管理",
+			"description": ""
+		},
+		{
+			"name": "App-本地服务-厂房出租",
+			"description": ""
+		},
+		{
+			"name": "App-本地服务-库存清理",
+			"description": ""
+		},
+		{
+			"name": "App-企业信息",
+			"description": ""
+		},
+		{
+			"name": "App-企业认证",
+			"description": ""
+		},
+		{
+			"name": "App-本地服务-服务列表",
+			"description": ""
+		},
+		{
+			"name": "App-用户",
+			"description": ""
+		},
+		{
+			"name": "app-send-code-controller",
+			"description": ""
+		},
+		{
+			"name": "历史搜索记录",
+			"description": ""
+		},
+		{
+			"name": "App-商机管理",
+			"description": ""
+		},
+		{
+			"name": "实名认证",
+			"description": ""
+		},
+		{
+			"name": "语言互译",
+			"description": ""
+		},
+		{
+			"name": "APP-名片管理",
+			"description": ""
+		}
+	]
+}
